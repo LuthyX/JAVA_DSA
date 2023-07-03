@@ -1,4 +1,4 @@
-package com.luti.arrays;
+package com.luti.java_refresh.arrays;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package com.luti;
+package com.luti.java_refresh.arrays;
 
 import java.util.HashSet;
 import java.util.Set;
