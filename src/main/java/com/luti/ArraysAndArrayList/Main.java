@@ -18,10 +18,13 @@ public class Main {
         String[] arr = new String[3];
         System.out.println(arr[0]);
 
-        int[] intArr = {2,4,5,7,6,9};
-        swap(intArr, 2,4);
+        int[] intArr = {2,0,8,0,6,9,10,0,22,1};
+//        swap(intArr, 2,4);
 //        System.out.println(Arrays.toString(intArr));
-        reverse(intArr);
+//        reverse(intArr);
+//        System.out.println(Arrays.toString(intArr));
+//        System.out.println(secondMax(intArr));
+        moveZerosToEnd(intArr);
         System.out.println(Arrays.toString(intArr));
 
     }
@@ -42,4 +45,33 @@ public class Main {
         arr[index1] = arr[index2];
         arr[index2] = temp;
     }
+
+    static int secondMax(int[] arr){
+        int max=0;
+        int max2=0;
+        for (int i=0; i<arr.length; i++){
+            if (arr[i] > max){
+                max2 = max;
+                max = arr[i];
+            } else if (arr[i]> max2 && arr[i] != max) {
+                max2 = arr[i];
+            }
+        }
+        return max2;
+    }
+
+    static void moveZerosToEnd(int[] arr){
+        int j = 0; // this will focus on zero elements
+        for (int i=0; i<arr.length; i++) { // i will focus on non-zero Elements
+            if (arr[i] != 0 && arr[j] == 0){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            if (arr[j] != 0){
+                j++;
+            }
+        }
+    }
+
 }
